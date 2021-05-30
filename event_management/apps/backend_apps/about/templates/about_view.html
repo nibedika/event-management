@@ -1,0 +1,60 @@
+<!-- ======== START OF HEADER SECTION ========= -->
+{% include "backend_includes/header.html" %}
+<!-- ======== END OF HEADER SECTION =========== -->
+
+{% load static %}
+{% block content %}
+
+    <!-- ======== START OF HEADER SECTION ========= -->
+    {% include "backend_includes/menubar.html" %}
+    <!-- ======== END OF HEADER SECTION =========== -->
+
+    <!-- ======== START OF HEADER SECTION ========= -->
+    {% include "backend_includes/aside.html" %}
+    <!-- ======== END OF HEADER SECTION =========== -->
+
+    <div class="content-wrapper">
+        <div class="col-md-12">&nbsp;</div>
+        <section class="content">
+            <div class="container-fluid">
+                <div class="col-md-9">
+                    <div class="card card-info">
+                        <div class="card-header">
+                            <h3 class="card-title">View About Info</h3>
+                        </div>
+
+                        <div class="card-body">
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label">Description</label>
+                                <div class="col-sm-8" id="newText">
+                                    {{ aboutData.about_txt }}
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- <script type="text/javascript">
+                            let text = '{{ aboutData.about_txt }}';
+                            console.log(text);
+                            let doc = new DOMParser().parseFromString(text, 'text/html');
+                            console.log(doc.body.firstChild.data);
+                            document.getElementById("newText").innerHTML = doc.body.firstChild.data;
+                        </script> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>makeHTML('newText');</script>
+
+    <!-- Control sidebar content goes here -->
+    <aside class="control-sidebar control-sidebar-dark">
+        <!-- /.control-sidebar -->
+    </aside>
+
+{% endblock content %}
+
+<!-- ===== START OF FOOTER SECTION ======== -->
+{% include "backend_includes/footer.html" %}
+<!-- ===== END OF FOOTER SECTION ==========

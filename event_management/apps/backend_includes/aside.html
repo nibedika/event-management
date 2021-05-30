@@ -1,0 +1,353 @@
+{% load static %}
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Sidebar -->
+    <div class="sidebar">
+
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <div class="image">
+                <img src="{{ MEDIA_URL }}profile_img/{{ menuData.profile_picture }}" class="img-circle elevation-2" alt="User Image">
+            </div>
+
+            <div class="info">
+                <a href="{% url 'view_profile' %}" target="_blank" class="d-block">{{ menuData.name | title }}</a>
+            </div>
+        </div>
+
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                
+                <li class="nav-item has-treeview menu-open">
+                    <a href="{% url 'home' %}" class="nav-link active">
+                        <p>Dashboard</p>
+                    </a>
+                </li>
+
+
+                {% if menuData.designation == 'owner' %}
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <p>
+                            &nbsp; About
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{% url 'add_about' %}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Add New</p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="{% url 'all_about' %}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>View All</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <p>
+                            &nbsp; Decoration Service
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{% url 'add_service' %}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Add New</p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="{% url 'all_service' %}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>View All</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <p>
+                            &nbsp; Emergency Service
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{% url 'add_emergency_service' %}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Add New</p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="{% url 'all_emergency_service' %}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>View All</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <p>
+                            &nbsp; Photography
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{% url 'add_photography' %}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Add New</p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="{% url 'all_photography' %}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>View All</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <p>
+                            &nbsp; Sponsor
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{% url 'add_sponsor' %}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Add New</p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="{% url 'all_sponsor' %}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>View All</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <p>
+                            &nbsp; Client
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{% url 'add_client' %}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Add New</p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="{% url 'all_client' %}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>View All</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <p>
+                            &nbsp; Staff
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{% url 'add_staff' %}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Add New</p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="{% url 'all_staff' %}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>View All</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <p>
+                            &nbsp; Event
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{% url 'add_event' %}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Add New</p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="{% url 'all_event' %}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>View All</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <p>
+                            &nbsp; Event Booking
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{% url 'add_booking' %}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Add New</p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="{% url 'all_booking' %}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>View All</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <p>
+                            &nbsp; Package
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{% url 'add_package' %}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Add New</p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="{% url 'all_package' %}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>View All</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <p>
+                            &nbsp; Picnic Event
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{% url 'add_picnic' %}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Add New</p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="{% url 'all_picnic' %}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>View All</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+
+                <li class="nav-item has-treeview">
+                    <a href="{% url 'all_feedback' %}" class="nav-link">
+                        <p>
+                            &nbsp; Feedbacks
+                        </p>
+                    </a>
+                </li>
+                
+
+                <!-- <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="fa fa-comments"></i>
+                        <p>
+                            &nbsp; Contacts
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{% url 'set_contact' %}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Set New</p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="{% url 'all_contact' %}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>View All</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li> -->
+                {% endif %}
+                
+            </ul>
+        </nav>
+    </div>
+</aside>

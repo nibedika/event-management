@@ -1,0 +1,392 @@
+<!-- ======== START OF HEADER SECTION ========= -->
+{% include "frontend_includes/frontend_header.html" %}
+<!-- ======== END OF HEADER SECTION =========== -->
+{% load static %}
+{% block content %}
+
+<!--wrapper start-->
+<div class="wrapper" id="wrapper">
+	
+	<!-- ======== START OF HEADER SECTION ========= -->
+    {% include "frontend_includes/frontend_menubar.html" %}
+    <!-- ======== END OF HEADER SECTION =========== -->
+		
+	<!--about us-->
+	<section class="aboutus" id="aboutus">
+		<div class="container">
+			<div class="heading text-center">
+				<img class="dividerline" src="{% static 'front-img/sep.png' %}" alt="">
+				<h2>About Us</h2>
+				<img class="dividerline" src="{% static 'front-img/sep.png' %}" alt="">
+			</div>	
+
+			<div class="row">
+				<div class="col-md-12">
+					<div class="papers text-center">
+						<img width="100%" src="{{ MEDIA_URL }}about_img/{{ aboutData.about_img }}" alt=""><br/><br/>
+						<a href="{{ MEDIA_URL }}cv_file/{{ aboutData.cv_file }}" download><b>Download File</b></a>
+						<!-- <h4 class="notopmarg nobotmarg"></h4> -->
+						<p>
+							{{ aboutData.about_txt | striptags }}
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	
+	<!--gallery-->
+	<section class="gallery" id="gallery">
+		<div class="container">
+			<div class="heading text-center">
+				<img class="dividerline" src="img/sep.png" alt="">
+				<h2>Our Decoration Services</h2>
+				<img class="dividerline" src="img/sep.png" alt="">
+			</div>
+			
+			<div id="grid-gallery" class="grid-gallery">
+
+					<section class="grid-wrap">
+						<ul class="grid">
+							<li class="grid-sizer"></li>
+
+							{% for i in serviceData %}				
+							<li>
+								<figure>
+									<img height="200px" src="{{ MEDIA_URL }}service_icon/{{ i.service_icon }}" alt=""/>
+
+									<figcaption>
+										<h3>{{ i.service_title }}</h3>
+
+										<!-- <p>{{ i.service_txt | striptags }} </p> -->
+									</figcaption>
+								</figure>
+							</li>
+							{% endfor %}
+						</ul>
+					</section>
+					
+					<section class="slideshow">
+						<ul>
+							{% for i in serviceData %}
+							<li>
+								<figure>
+									<img src="{{ MEDIA_URL }}service_icon/{{ i.service_icon }}" alt=""/>
+
+									<figcaption>
+										<h3>{{ i.service_title }}</h3>
+										<p>{{ i.service_txt | striptags }} </p>
+									</figcaption>
+								</figure>
+							</li>
+							{% endfor %}
+						</ul>
+						<nav>
+							<span class="icon nav-prev"></span>
+							<span class="icon nav-next"></span>
+							<span class="icon nav-close"></span>
+						</nav>
+						<div class="info-keys icon">Navigate with arrow keys</div>
+					</section><!-- // end slideshow -->
+					
+				</div><!-- // grid-gallery -->
+			</div>
+	</section>
+
+	
+	<!--gallery-->
+	<section class="gallery" id="gallery">
+		<div class="container">
+			<div class="heading text-center">
+				<img class="dividerline" src="img/sep.png" alt="">
+				<h2>Our Photography Services</h2>
+				<img class="dividerline" src="img/sep.png" alt="">
+			</div>
+			
+			<div id="grid-gallery" class="grid-gallery">
+
+					<section class="grid-wrap">
+						<ul class="grid">
+							<li class="grid-sizer"></li>
+
+							{% for i in photographyData %}				
+							<li>
+								<figure>
+									<img height="200px" src="{{ MEDIA_URL }}photography_icon/{{ i.photography_icon }}" alt=""/>
+
+									<figcaption>
+										<h3>{{ i.photography_title }}</h3>
+
+										<!-- <p>{{ i.photography_txt | striptags }} </p> -->
+									</figcaption>
+								</figure>
+							</li>
+							{% endfor %}
+						</ul>
+					</section>
+					
+					<section class="slideshow">
+						<ul>
+							{% for i in serviceData %}
+							<li>
+								<figure>
+									<img src="{{ MEDIA_URL }}photography_icon/{{ i.photography_icon }}" alt=""/>
+
+									<figcaption>
+										<h3>{{ i.photography_title }}</h3>
+										<p>{{ i.photography_txt | striptags }} </p>
+									</figcaption>
+								</figure>
+							</li>
+							{% endfor %}
+						</ul>
+						<nav>
+							<span class="icon nav-prev"></span>
+							<span class="icon nav-next"></span>
+							<span class="icon nav-close"></span>
+						</nav>
+						<div class="info-keys icon">Navigate with arrow keys</div>
+					</section><!-- // end slideshow -->
+					
+				</div><!-- // grid-gallery -->
+			</div>
+	</section>
+
+	
+	<!--gallery-->
+	<section class="gallery" id="gallery">
+		<div class="container">
+			<div class="heading text-center">
+				<img class="dividerline" src="img/sep.png" alt="">
+				<h2>Events Gallery</h2>
+				<img class="dividerline" src="img/sep.png" alt="">
+			</div>
+			
+			<div id="grid-gallery" class="grid-gallery">
+
+					<section class="grid-wrap">
+						<ul class="grid">
+							<li class="grid-sizer"></li>
+
+							{% for i in eventData %}				
+							<li>
+								<figure>
+									<img src="{{ MEDIA_URL }}event_file/{{ i.event_file }}" alt=""/>
+
+									<figcaption>
+										<h3>{{ i.event_name }}</h3>
+
+										<!-- <p>{{ i.event_description | striptags }} </p> -->
+									</figcaption>
+								</figure>
+							</li>
+							{% endfor %}
+						</ul>
+					</section>
+					
+					<section class="slideshow">
+						<ul>
+							{% for i in eventData %}
+							<li>
+								<figure>
+									<img src="{{ MEDIA_URL }}event_file/{{ i.event_file }}" alt=""/>
+
+									<figcaption>
+										<h3>{{ i.event_name }}</h3>
+										<p>{{ i.event_description | striptags }} </p>
+									</figcaption>
+								</figure>
+							</li>
+							{% endfor %}
+						</ul>
+						<nav>
+							<span class="icon nav-prev"></span>
+							<span class="icon nav-next"></span>
+							<span class="icon nav-close"></span>
+						</nav>
+						<div class="info-keys icon">Navigate with arrow keys</div>
+					</section><!-- // end slideshow -->
+					
+				</div><!-- // grid-gallery -->
+			</div>
+	</section>
+
+	
+	<!--gallery-->
+	<!-- <section class="gallery" id="gallery">
+		<div class="container">
+			<div class="heading text-center">
+				<img class="dividerline" src="img/sep.png" alt="">
+				<h2>Packages Gallery</h2>
+				<img class="dividerline" src="img/sep.png" alt="">
+			</div>
+			
+			<div id="grid-gallery" class="grid-gallery">
+
+					<section class="grid-wrap">
+						<ul class="grid">
+							<li class="grid-sizer"></li>
+
+							{% for i in packageData %}				
+							<li>
+								<figure>
+									<img src="{{ MEDIA_URL }}package_file/{{ i.package_file }}" alt=""/>
+
+									<figcaption>
+										<h3>{{ i.package_name }}</h3>
+									</figcaption>
+								</figure>
+							</li>
+							{% endfor %}
+						</ul>
+					</section>
+					
+					<section class="slideshow">
+						<ul>
+							{% for i in packageData %}
+							<li>
+								<figure>
+									<img src="{{ MEDIA_URL }}event_file/{{ i.event_file }}" alt=""/>
+
+									<figcaption>
+										<h3>{{ i.package_name }}</h3>
+										<p>{{ i.package_description | striptags }} </p>
+									</figcaption>
+								</figure>
+							</li>
+							{% endfor %}
+						</ul>
+						<nav>
+							<span class="icon nav-prev"></span>
+							<span class="icon nav-next"></span>
+							<span class="icon nav-close"></span>
+						</nav>
+						<div class="info-keys icon">Navigate with arrow keys</div>
+					</section>
+					
+				</div>
+			</div>
+	</section> -->
+
+	
+	<!--feedback-->
+	<section class="feedback" id="feedback">
+		<div class="container w960">
+			<div class="heading">
+				<img class="dividerline" src="{% static 'front-img/sep.png' %}" alt="">
+				<h2>Clients Say</h2>
+				<img class="dividerline" src="{% static 'front-img/sep.png' %}" alt="">
+			</div>
+
+			<div class="row">
+				{% for i in feedbackData %}
+				<blockquote>"{{ i.description }}" 
+					<cite>{{ i.name }}<br/>
+						{% if i.rating == '1' %}
+						<i class="fa fa-star"></i> 
+						{% elif i.rating == '2' %}
+						<i class="fa fa-star"></i> 
+						<i class="fa fa-star"></i> 
+						{% elif i.rating == '3' %}
+						<i class="fa fa-star"></i> 
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star"></i> 
+						{% elif i.rating == '4' %}
+						<i class="fa fa-star"></i> 
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star"></i> 
+						<i class="fa fa-star"></i> 
+						{% elif i.rating == '5' %}
+						<i class="fa fa-star"></i> 
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star"></i>
+						{% endif %}
+					</cite> 
+				</blockquote>
+				{% endfor %}
+			</div>
+		</div>
+	</section>
+	
+	<!--feedback-->
+	<section class="contact" id="contact">
+		<div class="container">
+			<div class="heading">
+				<img class="dividerline" src="{% static 'front-img/sep.png' %}" alt="">
+				<h2>Give Feedback</h2>
+				<img class="dividerline" src="{% static 'front-img/sep.png' %}" alt="">
+			</div>
+		</div>
+
+		<div class="container w960">
+			<div class="row">
+				<div class="done">
+					<div class="alert alert-success">
+					<button type="button" class="close" data-dismiss="alert">×</button>
+					Your message has been sent. Thank you!
+					</div>
+				</div>
+
+				<form method="POST" action="" id="contactform">
+					{% csrf_token %}
+					<input name="name" type="text" class="contact col-md-6" placeholder="Your Name *" required>
+					
+					<input name="contact" type="text" class="contact noMarr col-md-6" placeholder="Contact number *" required>
+					
+					<input name="email" type="email" class="contact noMarr col-md-6" placeholder="E-mail address *" required>
+
+					<select name="event" class="contact noMarr col-md-6" required>
+						<option value="" selected disabled>Select Event</option>
+                        {% for e in eventData %}
+                            <option value="{{ e.id }}">{{ e.event_name }}</option>
+                        {% endfor %}
+                    </select>
+					
+					<textarea name="description" class="contact col-md-12" placeholder="Message *" required></textarea>
+
+					<label> Rating : </label> &nbsp; 
+					<input type="checkbox" id="rat1" name="rating" value="1">
+					<label for="rat1"> One Star</label> &nbsp; 
+					<input type="checkbox" id="rat2" name="rating" value="2">
+					<label for="rat2"> Two Star</label> &nbsp; 
+					<input type="checkbox" id="rat3" name="rating" value="3">
+					<label for="rat3"> Three Star</label> &nbsp; 
+					<input type="checkbox" id="rat4" name="rating" value="4">
+					<label for="rat4"> Four Star</label> &nbsp; 
+					<input type="checkbox" id="rat5" name="rating" value="5">
+					<label for="rat5"> Five Star</label><br><br>
+					
+					<input name="feedback_add" type="submit" class="contact submit" value="Send Feedback">
+				</form>
+			</div>
+		</div>
+	</section>
+	  
+
+
+	<section class="footer" id="footer">
+		<p class="text-center">
+			<a href="#wrapper" class="gototop"><i class="fa fa-angle-double-up fa-2x"></i></a>
+		</p>
+
+		<div class="container">
+			<ul style="color: white;">
+				Plan your dream with us.
+				<!-- <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+				<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+				<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+				<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+				<li><a href="#"><i class="fa fa-flickr"></i></a></li> -->
+			</ul>
+		</div>
+	</section>
+	
+</div>
+{% endblock content %}
+
+<!-- ===== START OF FOOTER SECTION ======== -->
+{% include "frontend_includes/frontend_footer.html" %}
+<!-- ===== END OF FOOTER SECTION ========== -->

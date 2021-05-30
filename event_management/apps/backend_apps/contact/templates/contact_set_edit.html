@@ -1,0 +1,161 @@
+<!-- ======== START OF HEADER SECTION ========= -->
+{% include "backend_includes/header.html" %}
+<!-- ======== END OF HEADER SECTION =========== -->
+{% load static %}
+{% block content %}
+
+    <!-- ======== START OF HEADER SECTION ========= -->
+    {% include "backend_includes/menubar.html" %}
+    <!-- ======== END OF HEADER SECTION =========== -->
+
+    <!-- ======== START OF HEADER SECTION ========= -->
+    {% include "backend_includes/aside.html" %}
+    <!-- ======== END OF HEADER SECTION =========== -->
+
+    <div class="content-wrapper">
+        <div class="col-md-12">&nbsp;</div>
+        <section class="content">
+            <div class="container-fluid">
+                <div class="col-md-9">
+                    <div class="card card-info">
+                        <div class="card-header">
+                            <h3 class="card-title">Edit Set Contact</h3>
+                        </div>
+
+                        <form class="form-horizontal" method="POST" action="" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="card-body">
+
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label">Email</label>
+                                    <div class="col-sm-8">
+                                        <textarea name="email" class="textarea" 
+                                        style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">
+                                        {{ setContactData.email }}
+                                        </textarea>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label">Contact</label>
+                                    <div class="col-sm-8">
+                                        <textarea name="contact" class="textarea" 
+                                        style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">
+                                        {{ setContactData.contact }}
+                                        </textarea>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label">Address</label>
+                                    <div class="col-sm-8">
+                                        <textarea name="address" class="textarea" 
+                                        style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">
+                                        {{ setContactData.address }}
+                                        </textarea>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label">Facebook URL</label>
+                                    <div class="col-sm-8">
+                                        <textarea name="facebook_url" class="textarea" 
+                                        style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">
+                                        {{ setContactData.facebook_url }}
+                                        </textarea>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label">Instagram URL</label>
+                                    <div class="col-sm-8">
+                                        <textarea name="instagram_url" class="textarea" 
+                                        style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">
+                                        {{ setContactData.instagram_url }}
+                                        </textarea>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label">Linkedin URL</label>
+                                    <div class="col-sm-8">
+                                        <textarea name="linkedin_url" class="textarea" 
+                                        style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">
+                                        {{ setContactData.linkedin_url }}
+                                        </textarea>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label">Github URL</label>
+                                    <div class="col-sm-8">
+                                        <textarea name="github_url" class="textarea" 
+                                        style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">
+                                        {{ setContactData.github_url }}
+                                        </textarea>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label">Twitter URL</label>
+                                    <div class="col-sm-8">
+                                        <textarea name="twitter_url" class="textarea" 
+                                        style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">
+                                        {{ setContactData.twitter_url }}
+                                        </textarea>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label">Pinterest URL</label>
+                                    <div class="col-sm-8">
+                                        <textarea name="pinterest_url" class="textarea" 
+                                        style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">
+                                        {{ setContactData.pinterest_url }}
+                                        </textarea>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label">Youtube URL</label>
+                                    <div class="col-sm-8">
+                                        <textarea name="youtube_url" class="textarea" 
+                                        style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">
+                                        {{ setContactData.youtube_url }}
+                                        </textarea>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label">Status</label>
+                                    <div class="col-sm-8">
+                                        <select name="status" class="form-control select2" style="width: 100%;">
+                                            <option value="" disabled>Select</option>
+                                            <option {% if setContactData.status == 'show' %} selected {% endif %} value="show">Show</option>
+                                            <option {% if setContactData.status == 'hide' %} selected {% endif %} value="hide">Hide</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card-footer">
+                                <input type="submit" name="set_contact_edit" value="Update" class="btn btn-info">
+                                <button type="reset" class="btn btn-default float-right">Discard</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Control sidebar content goes here -->
+    <aside class="control-sidebar control-sidebar-dark">
+        <!-- /.control-sidebar -->
+    </aside>
+
+{% endblock content %}
+
+<!-- ===== START OF FOOTER SECTION ======== -->
+{% include "backend_includes/footer.html" %}
+<!-- ===== END OF FOOTER SECTION ==========

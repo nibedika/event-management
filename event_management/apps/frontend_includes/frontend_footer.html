@@ -1,0 +1,41 @@
+{% load static %}
+
+		<!--Javascripts-->
+		<script src="{% static 'front-js/jquery.js' %}"></script>
+		<script src="{% static 'front-js/modernizr.js' %}"></script>
+		<script src="{% static 'front-js/bootstrap.js' %}"></script>
+		<script src="{% static 'front-js/menustick.js' %}"></script>
+		<script src="{% static 'front-js/parallax.js' %}"></script>
+		<script src="{% static 'front-js/easing.js' %}"></script>
+		<script src="{% static 'front-js/wow.js' %}"></script>
+		<script src="{% static 'front-js/smoothscroll.js' %}"></script>
+		<script src="{% static 'front-js/masonry.js' %}"></script>
+		<script src="{% static 'front-js/imgloaded.js' %}"></script>
+		<script src="{% static 'front-js/classie.js' %}"></script>
+		<script src="{% static 'front-js/colorfinder.js' %}"></script>
+		<script src="{% static 'front-js/gridscroll.js' %}"></script>
+		<script src="{% static 'front-js/contact.js' %}"></script>
+		<script src="{% static 'front-js/common.js' %}"></script>
+
+		<script type="text/javascript">
+		jQuery(function($) {
+		$(document).ready( function() {
+		  //enabling stickUp on the '.navbar-wrapper' class
+			$('.navbar-wrapper').stickUp({
+				parts: {
+				  0: 'banner',
+				  1: 'aboutus',
+				  2: 'specialties',
+				  3: 'gallery',
+				  4: 'feedback',
+				  5: 'contact'
+				},
+				itemClass: 'menuItem',
+				itemHover: 'active',
+				topMargin: 'auto'
+				});
+			});
+		});
+		</script>
+	</body>
+</html>

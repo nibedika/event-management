@@ -1,0 +1,126 @@
+<!-- ======== START OF HEADER SECTION ========= -->
+{% include "backend_includes/header.html" %}
+<!-- ======== END OF HEADER SECTION =========== -->
+{% load static %}
+{% block content %}
+
+    <!-- ======== START OF HEADER SECTION ========= -->
+    {% include "backend_includes/menubar.html" %}
+    <!-- ======== END OF HEADER SECTION =========== -->
+
+    <!-- ======== START OF HEADER SECTION ========= -->
+    {% include "backend_includes/aside.html" %}
+    <!-- ======== END OF HEADER SECTION =========== -->
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1 class="m-0 text-dark">Dashboard</h1>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item active">Dashboard</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.content-header -->
+
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+
+                    <div class="col-lg-3 col-6">
+                        <div class="small-box bg-info">
+                            <div class="inner text-center">
+                                <h3>{{ event }}</h3>
+                                <p>Total Event</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-6">
+                        <div class="small-box bg-warning">
+                            <div class="inner text-center">
+                                <h3>{{ booking }}</h3>
+                                <p>Total Booking</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-6">
+                        <div class="small-box bg-success">
+                            <div class="inner text-center">
+                                <h3>{{ activeBooking }}</h3>
+                                <p>Confirmed Booking</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-6">
+                        <div class="small-box bg-danger">
+                            <div class="inner text-center">
+                                <h3>{{ inactiveBooking }}</h3>
+                                <p>Cancelled Booking</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-6">
+                        <div class="small-box bg-danger">
+                            <div class="inner text-center">
+                                <h3>{{ service }}</h3>
+                                <p>Total Service</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-6">
+                        <div class="small-box bg-success">
+                            <div class="inner text-center">
+                                <h3>{{ photography }}</h3>
+                                <p>Total Photography</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-6">
+                        <div class="small-box bg-warning">
+                            <div class="inner text-center">
+                                <h3>{{ package }}</h3>
+                                <p>Total Package</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-6">
+                        <div class="small-box bg-info">
+                            <div class="inner text-center">
+                                <h3>{{ feedback }}</h3>
+                                <p>Total Feedback</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+    <aside class="control-sidebar control-sidebar-dark">
+    </aside>
+
+{% endblock content %}
+
+<!-- ===== START OF FOOTER SECTION ======== -->
+{% include "backend_includes/footer.html" %}
+<!-- ===== END OF FOOTER SECTION ========== -->

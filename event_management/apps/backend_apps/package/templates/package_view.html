@@ -1,0 +1,170 @@
+<!-- ======== START OF HEADER SECTION ========= -->
+{% include "backend_includes/header.html" %}
+<!-- ======== END OF HEADER SECTION =========== -->
+{% load static %}
+{% block content %}
+
+    <!-- ======== START OF HEADER SECTION ========= -->
+    {% include "backend_includes/menubar.html" %}
+    <!-- ======== END OF HEADER SECTION =========== -->
+
+    <!-- ======== START OF HEADER SECTION ========= -->
+    {% include "backend_includes/aside.html" %}
+    <!-- ======== END OF HEADER SECTION =========== -->
+
+    <div class="content-wrapper">
+        <div class="col-md-12">&nbsp;</div>
+        <section class="content">
+            <div class="container-fluid">
+                <div class="col-md-9">
+                    <div class="card card-info">
+                        <div class="card-header">
+                            <h3 class="card-title">View Package Info</h3>
+                        </div>
+
+                        <form class="form-horizontal" method="POST" action="" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="card-body">
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label">Package</label>
+                                    <div class="col-sm-8" id="newText1">
+                                        {{ packageData.package_name }}
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label">Vanue</label>
+                                    <div class="col-sm-8" id="newText2">
+                                        {{ packageData.package_value }}
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label">People Preference</label>
+                                    <div class="col-sm-8" id="newText2">
+                                        {{ packageData.people_preference }}
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label">Description</label>
+                                    <div class="col-sm-8" id="newText2">
+                                        {{ packageData.package_description | striptags }}
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label">Remark</label>
+                                    <div class="col-sm-8" id="newText3">
+                                        {{ packageData.package_remark | striptags }}
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label">Regular Price</label>
+                                    <div class="col-sm-8" id="newText3">
+                                        {{ packageData.regular_price }} TK
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label">Current Price</label>
+                                    <div class="col-sm-8" id="newText3">
+                                        {{ packageData.current_price }} TK
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label">Service(s)</label>
+                                    <div class="col-sm-8" id="newText3">
+                                        {% for i in serviceData %}
+                                        {% with allService=packageData.service_id.all %}
+                                        {% if i in allService %}
+                                        <h5> - {{ i.service_title }}</h5>
+                                        {% endif %}
+                                        {% endwith %}
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                
+
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label">Emergency Services</label>
+                                    <div class="col-sm-8" id="newText3">
+                                        {% for i in emergencyServiceData %}
+                                        {% with allEmergencyService=packageData.emergency_service_id.all %}
+                                        {% if i in allEmergencyService %}
+                                        <h5> - {{ i.emergency_service_title }}</h5>
+                                        {% endif %}
+                                        {% endwith %}
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                
+
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label">Sponsor(s)</label>
+                                    <div class="col-sm-8" id="newText3">
+                                        {% for i in sponsorData %}
+                                        {% with allSponsor=packageData.sponsor_id.all %}
+                                        {% if i in allSponsor %}
+                                        <h5> - {{ i.name }}</h5>
+                                        {% endif %}
+                                        {% endwith %}
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                
+
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label">Client</label>
+                                    <div class="col-sm-8" id="newText3">
+                                        <h5> - {{ packageData.client_id.name }}</h5>
+                                    </div>
+                                </div>
+                                
+
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label">Staffs</label>
+                                    <div class="col-sm-8" id="newText3">
+                                        {% for i in staffData %}
+                                        {% with allStaff=packageData.staff_id.all %}
+                                        {% if i in allStaff %}
+                                        <h5> - {{ i.name }}</h5>
+                                        {% endif %}
+                                        {% endwith %}
+                                        {% endfor %}
+                                    </div>
+                                </div>
+
+                                
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label">Status</label>
+                                    <div class="col-sm-8">
+                                        {{ packageData.status | title }}
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        makeHTML('newText1');
+        makeHTML('newText2');
+        makeHTML('newText3');
+    </script>
+
+    <!-- Control sidebar content goes here -->
+    <aside class="control-sidebar control-sidebar-dark">
+        <!-- /.control-sidebar -->
+    </aside>
+
+{% endblock content %}
+
+<!-- ===== START OF FOOTER SECTION ======== -->
+{% include "backend_includes/footer.html" %}
+<!-- ===== END OF FOOTER SECTION ==========
